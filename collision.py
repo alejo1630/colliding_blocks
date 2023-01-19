@@ -5,7 +5,7 @@ from vpython import *
 #-----------------------------------------------------------------------------#
 ### Parameters
 m_A = 1 # Mass' A [kg]
-m_B = 100**2 # Mass' B[kg]
+m_B = 100 # Mass' B[kg]
 v_A = 0 # Speed's A [m/s]
 v_B = -10 # Speed's B [m/s]
 e_pp = 1 # Coefficient of Restitution particle-particle
@@ -23,7 +23,7 @@ def vel_pp(m_A, m_B, v_A, v_B, e_pp):
 #-----------------------------------------------------------------------------#
 ### Velocity after impact between particle A and wall
 def vel_pw(v_A, e_pw):
-    
+
     v_A_2 = -e_pw*v_A
     return v_A_2
 
@@ -135,13 +135,13 @@ while run:
     t += dt # Current time
 
     # Show Number of impacts
-    label(pos=vector(0,8,0), text='Impactos: {}'.format(col), color = color.white,linecolor=color.black)
+    label(pos=vector(0,8,0), text='Collisions: {}'.format(col), color = color.white,linecolor=color.black)
 
     # Show Velocity of A
-    label(pos=vector(0,5,0), text='Velocidad A: {:.2f} m/s'.format(cube_A.velocity.x), color = color.red, linecolor=color.black)
+    label(pos=vector(0,5,0), text='Velocity A: {:.2f} m/s'.format(cube_A.velocity.x), color = color.red, linecolor=color.black)
     
     # Show Velocity of B
-    label(pos=vector(0,2,0), text='Velocidad B: {:.2f} m/s'.format(cube_B.velocity.x), color = color.green, linecolor=color.black)
+    label(pos=vector(0,2,0), text='Velocity B: {:.2f} m/s'.format(cube_B.velocity.x), color = color.green, linecolor=color.black)
 
 
     ## Plots
