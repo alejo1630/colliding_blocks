@@ -6,14 +6,14 @@ from vpython import *
 ### Parameters
 m_A = 1 # Mass' A [kg]
 m_B = 100 # Mass' B[kg]
-v_A = 0 # Speed's A [m/s]
-v_B = -10 # Speed's B [m/s]
-e_pp = 1 # Coefficient of Restitution particle-particle
-e_pw = 1 # Coefficient of Restitution particle-wall
+v_A = 0 # Velocity's A [m/s]
+v_B = -10 # Velocity's B [m/s]
+e_pp = 1 # Coefficient of Restitution block-block
+e_pw = 1 # Coefficient of Restitution block-wall
 
 
 #-----------------------------------------------------------------------------#
-### Velocity after impact between particles A and B
+### Velocity after impact between block A and B
 def vel_pp(m_A, m_B, v_A, v_B, e_pp):
 
     v_A_2 = (m_A*v_A+m_B*v_B - e_pp*m_B*(v_A-v_B))/(m_A+m_B)
@@ -21,7 +21,7 @@ def vel_pp(m_A, m_B, v_A, v_B, e_pp):
     return v_A_2, v_B_2
 
 #-----------------------------------------------------------------------------#
-### Velocity after impact between particle A and wall
+### Velocity after impact between block A and wall
 def vel_pw(v_A, e_pw):
 
     v_A_2 = -e_pw*v_A
